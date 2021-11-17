@@ -42,12 +42,17 @@ app.use(function(err, req, res, next) {
 module.exports = app;
 
 // Database Connection
-const sequelize = new Sequelize('ieee', 'root', '', {
+const config = new Sequelize('ieee', 'root', '', {
   host: 'localhost',
   dialect: 'mysql'
 });
 try {
-  sequelize.authenticate().then(r =>console.log('Connection has been established successfully.') );
+  config.authenticate().then(r =>console.log('Connection has been established successfully.') );
+  var sql = "CREATE TABLE customers (name VARCHAR(255), address VARCHAR(255))";
+  config.query(sql, function (err) {
+    if (err) throw err;
+    console.log("Table created");
+  });
 } catch (error) {
   console.error('Unable to connect to the database:', error);
 }
