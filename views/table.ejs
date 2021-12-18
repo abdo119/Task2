@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/stylesheets/application.css">
+    <title>All application</title>
+</head>
+<body>
+<table>
+    <thead>
+    <tr>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Email</th>
+    </tr>
+    <thead>
+    <tbody>
+    <%for (let i =0;i<users.length;i++){%>
+    <tr >
+        <td><%=users[i].firstName%></td>
+        <td><%=users[i].lastName%></td>
+        <td><%=users[i].email%></td>
+    </tr>
+    <%}%>
+    </tbody>
+</table>
+
+</body>
+</html>

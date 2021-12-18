@@ -7,8 +7,18 @@ var logger = require('morgan');
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 const {Sequelize} = require("sequelize");
+const db =require('./models/index');
 
 var app = express();
+
+//Database
+
+db.sequelize
+    .authenticate()
+    .then(()=> console.log('DB connection Seccessful'))
+    .catch(err => console.log('Error: ' + err));
+
+
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -42,18 +52,9 @@ app.use(function(err, req, res, next) {
 module.exports = app;
 
 // Database Connection
-const config = new Sequelize('ieee', 'root', '', {
-  host: 'localhost',
-  dialect: 'mysql'
-});
-try {
-  config.authenticate().then(r =>console.log('Connection has been established successfully.') );
-  var sql = "CREATE TABLE customers (name VARCHAR(255), address VARCHAR(255))";
-  config.query(sql, function (err) {
-    if (err) throw err;
-    console.log("Table created");
-  });
-} catch (error) {
-  console.error('Unable to connect to the database:', error);
-}
+// const config = new Sequelize('ieee', 'root', '', {
+//   host: 'localhost',
+//   dialect: 'mysql'
+// });
+
 

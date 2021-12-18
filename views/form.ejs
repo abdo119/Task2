@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Registration</title>
+    <link rel="stylesheet" href="stylesheets/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+<div class="login-box">
+    <h2>Registration</h2>
+    <form method="post">
+        <div class="user-box">
+            <input type="text" name="firstName" required>
+            <label>First Name</label>
+        </div>
+        <div class="user-box">
+            <input type="text" name="lastName" required>
+            <label>Last Name</label>
+        </div>
+        <div class="user-box">
+            <input type="email" name="email" required>
+            <label>Email</label>
+        </div>
+
+        <div class="user-box">
+            <input type="text" name="uni" required>
+            <label>University</label>
+        </div>
+        <div class="user-box">
+
+            <select name="gender" required>
+                <option></option>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+            </select>
+            <label>Gender</label>
+
+        </div>
+        <div class="user-box">
+            <select name="work" required>
+                <option></option>
+                <option value="IT">IT</option>
+                <option value="CS">CS</option>
+            </select>
+            <label>WorkShops</label>
+        </div>
+        <button type="submit">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            Submit
+        </button>
+    </form>
+</div>
+
+</body>
+</html>
